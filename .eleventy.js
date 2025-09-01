@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css/");
     eleventyConfig.addPassthroughCopy("src/contents/");
     eleventyConfig.addPassthroughCopy("src/projects/");
+    eleventyConfig.addPassthroughCopy("CNAME");
 
     // Return configuration options
     return {

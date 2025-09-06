@@ -1,0 +1,69 @@
+---
+layout: base.njk
+---
+
+<div class="recruitment-post">
+    {% if featured[0] %}
+        <div class="featured-image-container">
+            <img src="{{ featured[0] }}" alt="{{ title }}" class="featured-image">
+        </div>
+    {% endif %}
+
+    <div class="recruitment-post-content">
+        <h1>{{ title }}</h1>
+        <div>{{ content | safe }}</div>
+
+        {% if apply_link %}
+            <a href="{{ apply_link }}" class="apply-button" target="_blank">Apply Now</a>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .featured-image-container {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .featured-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .recruitment-post-content {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .recruitment-post-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .recruitment-post-content div {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        white-space: pre-wrap;
+        text-align: justify;
+    }
+
+    .apply-button {
+        display: block;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: 40px auto 0 auto;
+        background-color: #28a745; /* Green */
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .apply-button:hover {
+        background-color: #218838; /* Darker Green */
+    }
+</style>

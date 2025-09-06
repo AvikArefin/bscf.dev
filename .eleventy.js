@@ -4,10 +4,15 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag("events");
     });
 
+    eleventyConfig.addCollection("recruitments", function (collectionApi) {
+        return collectionApi.getFilteredByTag("recruitments");
+    });
+
     // Passthrough copy for static assets
     eleventyConfig.addPassthroughCopy("src/css/");
     eleventyConfig.addPassthroughCopy("src/contents/");
     eleventyConfig.addPassthroughCopy("src/projects/");
+    eleventyConfig.addPassthroughCopy("src/apply/");
     eleventyConfig.addPassthroughCopy("CNAME");
 
     // Return configuration options

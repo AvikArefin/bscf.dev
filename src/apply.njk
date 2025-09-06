@@ -1,34 +1,34 @@
 ---
 layout: base.njk
-title: All projects
-permalink: /projects/
+title: All recuitments
+permalink: /apply/
 ---
 <h1 style="text-align: center; padding: 80px; ">{{ title }}</h1>
 
-<div class="project-list">
-  {% for project in collections.projects %}
-  <div class="project">
-    {% if project.data.images and project.data.images[0] %}
-    <img src="{{ project.data.featured[0] }}" alt="{{ project.data.title }} image">
+<div class="recuitment-list">
+  {% for recuitment in collections.recruitments %}
+  <div class="recuitment">
+    {% if recuitment.data.images and recuitment.data.images[0] %}
+    <img src="{{ recuitment.data.featured[0] }}" alt="{{ recuitment.data.title }} image">
     {% endif %}
-    <div class="project-content">
-      <h2><a href="{{ project.url }}">{{ project.data.title }}</a></h2>
-      <!-- <p>Date: {{ project.data.date }}</p> -->
-      <p>{{ project.data.description }}</p>
+    <div class="recuitment-content">
+      <h2><a href="{{ recuitment.url }}">{{ recuitment.data.title }}</a></h2>
+      <!-- <p>Date: {{ recuitment.data.date }}</p> -->
+      <p>{{ recuitment.data.description }}</p>
     </div>
   </div>
   {% endfor %}
 </div>
 
 <style>
-  .project-list {
+  .recuitment-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 20px;
   }
 
-  .project {
+  .recuitment {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -36,37 +36,37 @@ permalink: /projects/
     transition: box-shadow 0.3s ease;
   }
 
-  .project:hover {
+  .recuitment:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  .project-content {
+  .recuitment-content {
     padding: 1.5rem;
   }
 
-  .project h2 {
+  .recuitment h2 {
     font-size: 1.25rem;
     margin: 0 0 0.5rem;
     color: #333;
   }
 
-  .project h2 a {
+  .recuitment h2 a {
     color: #2b6cb0;
     text-decoration: none;
   }
 
-  .project h2 a:hover {
+  .recuitment h2 a:hover {
     color: #1a4971;
     text-decoration: underline;
   }
 
-  .project p {
+  .recuitment p {
     margin: 0 0 0.75rem;
     color: #555;
     font-size: 0.9rem;
   }
 
-  .project img {
+  .recuitment img {
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -74,16 +74,16 @@ permalink: /projects/
   }
 
   @media (max-width: 768px) {
-    .project-list {
+    .recuitment-list {
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
-    .project h2 {
+    .recuitment h2 {
       font-size: 1.1rem;
     }
 
-    .project img {
+    .recuitment img {
       height: 120px;
     }
   }

@@ -14,8 +14,6 @@ images:
     - /projects/project4/4.jpg
 
 
-slug: project4
-permalink: /projects/{{ slug }}/
 tags: projects
 ---
 Purnota Foundation team and our collaborative field partners are happy to inform you that we have

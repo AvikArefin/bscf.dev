@@ -10,8 +10,6 @@ featured:
 images:
     - /projects/project2/2.jpg
 
-slug: project2
-permalink: /projects/{{ slug }}/
 tags: projects
 ---
 বিএসসিএফ পরিবার দৃঢ় অঙ্গীকারবদ্ধ ছিলো,আপনাদের পাঠানো সহায়তা বন্যায় ক্ষতিগ্রস্ত মানুষদের কাছে পৌছে দিতে।

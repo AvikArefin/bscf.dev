@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/header.css">
 <header>
     <div class="nav-title">
-        <img src="/contents/images/logo.png" alt="RUPSA Logo">
+        <img src="/contents/images/logo.svg" alt="BSCF Logo">
     </div>
     <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <ul class="nav">
@@ -10,6 +10,7 @@
         <li><a href="/team">TEAM</a></li>
         <li><a href="/projects">PROJECTS</a></li>
         <li><a href="/apply">APPLY</a></li>
+        <li><a href="/contact">CONTACT US</a></li>
     </ul>
 </header>
 <script>
@@ -26,13 +27,15 @@
         });
 
         // Team dropdown toggle on mobile
-        teamLink.addEventListener('click', (e) => {
-            if (window.innerWidth <= 767) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-                teamLink.setAttribute('aria-expanded', dropdown.classList.contains('active'));
-            }
-        });
+        if (teamLink) {
+            teamLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 767) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                    teamLink.setAttribute('aria-expanded', dropdown.classList.contains('active'));
+                }
+            });
+        }
 
         // Close dropdown and nav when clicking a nav link on mobile
         document.querySelectorAll('.nav a:not(.team-link)').forEach(link => {
@@ -40,17 +43,23 @@
                 if (window.innerWidth <= 767) {
                     nav.classList.remove('active');
                     hamburger.setAttribute('aria-expanded', 'false');
-                    dropdown.classList.remove('active');
-                    teamLink.setAttribute('aria-expanded', 'false');
+                    if (dropdown) {
+                        dropdown.classList.remove('active');
+                    }
+                    if (teamLink) {
+                        teamLink.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.team-item') && !e.target.closest('.dropdown')) {
+            if (dropdown && !e.target.closest('.team-item') && !e.target.closest('.dropdown')) {
                 dropdown.classList.remove('active');
-                teamLink.setAttribute('aria-expanded', 'false');
+                if (teamLink) {
+                    teamLink.setAttribute('aria-expanded', 'false');
+                }
             }
         });
     });

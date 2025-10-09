@@ -1,0 +1,221 @@
+---
+layout: base.njk
+---
+
+<section id="member-details" class="content-section">
+    <div class="member-profile">
+        <div class="member-left">
+            <div class="member-header">
+                <div class="image-container">
+                    <img src="{{ member.image }}" alt="{{ member.name }}">
+                </div>
+                <div class="member-info">
+                    <h1>{{ member.name }}</h1>
+                    <p class="role">{{ member.role }}</p>
+                    {% if member.department %}
+                        <p class="department">{{ member.department }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="member-right">
+            <div class="bio-content">
+                <p class="bio-text">{{ member.bio }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #member-details {
+        padding: 2rem;
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+    }
+
+    .member-profile {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        min-height: 500px;
+    }
+
+    .member-left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 20px 0 0 20px;
+    }
+
+    .member-right {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+        background: #ffffff;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .image-container {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 6px solid #228B22;
+        box-shadow: 0 8px 25px rgba(34, 139, 34, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(34, 139, 34, 0.4);
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .member-info h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+
+    .member-info .role {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: #228B22;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        background: rgba(34, 139, 34, 0.1);
+        border-radius: 25px;
+        border: 2px solid rgba(34, 139, 34, 0.2);
+    }
+
+    .member-info .department {
+        display: block;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #333;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        background: #f0f0f0;
+        border-radius: 25px;
+        border: 2px solid #ddd;
+        margin-top: 0.5rem;
+    }
+
+    .bio-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .bio-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #4a5568;
+        text-align: justify;
+        padding: 2rem;
+        background: rgba(248, 249, 250, 0.5);
+        border-radius: 15px;
+        border-left: 4px solid #228B22;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        white-space: pre-wrap;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .member-profile {
+            flex-direction: column;
+            max-width: 800px;
+        }
+        
+        .member-left {
+            flex: none;
+            border-radius: 20px 20px 0 0;
+            padding: 2rem 1rem;
+        }
+        
+        .member-right {
+            flex: none;
+            border-radius: 0 0 20px 20px;
+            padding: 2rem 1rem;
+        }
+
+        .image-container {
+            width: 180px;
+            height: 180px;
+        }
+
+        .member-info h1 {
+            font-size: 2rem;
+        }
+
+        .member-info .role {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #member-details {
+            padding: 1rem;
+        }
+
+        .member-left,
+        .member-right {
+            padding: 1.5rem;
+        }
+
+        .image-container {
+            width: 150px;
+            height: 150px;
+        }
+
+        .member-info h1 {
+            font-size: 1.8rem;
+        }
+
+        .bio-text {
+            font-size: 1rem;
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .member-info h1 {
+            font-size: 1.5rem;
+        }
+
+        .member-info .role {
+            font-size: 1rem;
+        }
+
+        .image-container {
+            width: 120px;
+            height: 120px;
+        }
+
+        .bio-text {
+            padding: 1rem;
+        }
+    }
+</style>

@@ -1,0 +1,11 @@
+---
+pagination:
+    data: allMembers
+    size: 1
+    alias: member
+permalink: "/team/{{ member.slug }}/index.html"
+layout: member-page.njk
+eleventyComputed:
+    title: "{{ member.name }}"
+    bodyClass: "member-page"
+---

@@ -2,360 +2,189 @@
 layout: base.njk
 title: BSCF
 ---
-<!-- main.html -->
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Bangladesh Socio-Cultural Forum</h1>
-        <p>Empowering Youth for a Sustainable Future</p>
+
+<section class="hero-header">
+  <div class="hero-overlay"></div>
+  <div class="hero-container">
+    <div class="archive-intro hero-content">
+      <span class="archive-tag light">Bangladesh Socio-Cultural Forum</span>
+      <h1 class="hero-title">Empowering Youth for a <br>Sustainable Future</h1>
+      <div class="archive-line gold"></div>
+      <p class="hero-subtitle">An independent platform dedicated to the socio-cultural and educational development of Bangladeshi youth.</p>
     </div>
+  </div>
 </section>
 
 <section class="partners-section">
-    <h2>Partners and Clients</h2>
-    <div class="partners-grid">
-        <div class="partner-card">
-            <div class="partner-badge">Government</div>
-            <img src="/contents/images/pc/16.png" alt="Government" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Government</div>
-            <img src="/contents/images/pc/13.png" alt="ZILA Parishad" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Government</div>
-            <img src="/contents/images/pc/15.png" alt="Novo Theater" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Government</div>
-            <img src="/contents/images/pc/12.png" alt="RCC" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">NGO</div>
-            <img src="/contents/images/pc/11.png" alt="RCCI" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Lifestyle</div>
-            <img src="/contents/images/pc/9.png" alt="skincafe" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Fashion</div>
-            <img src="/contents/images/pc/shajgoj.png" alt="shajgoj" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Consulting</div>
-            <img src="/contents/images/pc/lightcastle.svg" alt="lightcastle" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">NGO</div>
-            <img src="/contents/images/pc/shestem.svg" alt="SheSTEM" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Policy</div>
-            <img src="/contents/images/pc/yfp.svg" alt="Youth for Policy" class="partner-logo">
-        </div>
-
-        <div class="partner-card">
-            <div class="partner-badge">Development</div>
-            <img src="/contents/images/pc/3.png" alt="iid" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Media</div>
-            <img src="/contents/images/pc/6.png" alt="jamuna" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Media</div>
-            <img src="/contents/images/pc/5.png" alt="thedailystar" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Media</div>
-            <img src="/contents/images/pc/shomokal.svg" alt="Shomokal" class="partner-logo">
-        </div>
-
-        <div class="partner-card">
-            <div class="partner-badge">Industry</div>
-            <img src="/contents/images/pc/8.png" alt="ngi" class="partner-logo">
-        </div>
-        <div class="partner-card">
-            <div class="partner-badge">Tech</div>
-            <img src="/contents/images/pc/17.png" alt="mobileguru" class="partner-logo">
-        </div>
+  <div class="archive-container">
+    <div class="archive-intro">
+      <span class="archive-tag">Network</span>
+      <h2 class="archive-title">Our Partners</h2>
+      <div class="archive-line"></div>
     </div>
+
+    <div class="partners-grid">
+      {% set partners = [
+        { name: "Government", img: "16.png" },
+        { name: "ZILA Parishad", img: "13.png" },
+        { name: "Novo Theater", img: "15.png" },
+        { name: "RCC", img: "12.png" },
+        { name: "RCCI", img: "11.png" },
+        { name: "Skincafe", img: "9.png" },
+        { name: "Shajgoj", img: "shajgoj.png" },
+        { name: "Lightcastle", img: "lightcastle.svg" },
+        { name: "SheSTEM", img: "shestem.svg" },
+        { name: "Youth for Policy", img: "yfp.svg" },
+        { name: "IID", img: "3.png" },
+        { name: "Jamuna", img: "6.png" },
+        { name: "The Daily Star", img: "5.png" },
+        { name: "Shomokal", img: "shomokal.svg" },
+        { name: "Nabil Group", img: "8.png" },
+        { name: "Mobile Guru", img: "17.png" }
+      ] %}
+
+      {% for partner in partners %}
+      <div class="partner-item">
+        <div class="partner-img-wrapper">
+          <img src="/contents/images/pc/{{ partner.img }}" alt="{{ partner.name }}" loading="lazy">
+        </div>
+        <span class="partner-name">{{ partner.name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
-<section id="about" class="content-section">
-    <div class="about-container">
-        <h2>About BSCF</h2>
-        <p>Bangladesh Socio-Cultural Forum (BSCF) is an independent, non-political, and non-profit platform
-            dedicated to the socio-cultural and educational development of Bangladeshi youth. We focus on
-            enhancing social skills, encouraging participation in cultural activities, promoting environmental
-            awareness, and fostering tolerance and personal growth.</p>
-        <div class="vision-mission">
-            <div class="vision">
-                <h3>Our Vision</h3>
-                <p>BSCF envisions a Bangladesh where youth empowerment is paramount, ensuring their active
-                    participation and influential voice in national development. We advocate for a tolerant
-                    nation, emphasizing empathy and respect for diverse religions, perspectives, and beliefs.
-                    Our goal is to cultivate socially responsible, environmentally conscious citizens with
-                    cultural proficiency and a global mindset, ready to engage with the world and contribute to
-                    volunteerism, service, and long-term employment opportunities.</p>
-            </div>
-            <div class="mission">
-                <h3>Our Mission</h3>
-                <p>BSCF engages youth from diverse backgrounds—villages, urban areas, grassroots, and
-                    underprivileged regions—offering tangible behavioral skills, social responsibility, mental
-                    health awareness, and cultural exchange opportunities. We empower youth through
-                    volunteerism, fostering an environment where they emerge as non-communal, respectful,
-                    humble, environmentally aware, and tolerant global citizens, advocating for good governance
-                    and sustainable development.</p>
-            </div>
+<section class="home-about">
+  <div class="archive-container">
+    <div class="about-split">
+      <div class="about-text">
+        <div class="archive-intro">
+          <span class="archive-tag">About Us</span>
+          <h2 class="archive-title">What is BSCF?</h2>
+          <div class="archive-line"></div>
         </div>
+        <p class="about-lead">BSCF is an independent, non-political platform fostering personal growth and environmental awareness among youth.</p>
+        <p class="about-body">We envision a Bangladesh where youth empowerment ensures an influential voice in national development, advocating for a tolerant and socially responsible nation.</p>
+        <a href="/about/" class="text-link">Read our full vision →</a>
+      </div>
+      <div class="about-image">
+        <div class="image-frame">
+          <img src="/contents/images/front.jpg" alt="BSCF Youth Empowerment">
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
-    .hero {
-        height: 100vh;
-        background-image: url('/contents/images/front.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #fff;
-    }
+  :root {
+    --border-color: #eaeaea;
+    --text-main: #1a1a1a;
+    --text-muted: #666;
+    --accent: #000000; /* Deep BSCF Green */
+    --max-width: 1200px;
+  }
 
-    .hero-content {
-        background: rgba(0, 0, 0, 0.4);
-        padding: 2rem;
-        border-radius: 10px;
-        animation: fadeInUp 1s ease-out;
-    }
+  /* SHARED CLASSES */
+  .archive-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
 
-    .hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-    }
+  .archive-intro { margin-bottom: 40px; }
+  .archive-tag {
+    display: block; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.15em; color: #a0a0a0; font-weight: 700; margin-bottom: 10px;
+  }
+  .archive-tag.light { color: rgba(255,255,255,0.8); }
+  .archive-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800;
+    margin: 0 0 20px 0; letter-spacing: -0.03em; line-height: 1.1;
+  }
+  .archive-line { height: 4px; width: 60px; background: var(--text-main); margin-bottom: 24px; }
+  .archive-line.gold { background: #fff; }
 
-    .hero p {
-        font-size: 1.8rem;
-        font-weight: 300;
-    }
+  /* HERO SECTION */
+  .hero-header {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    background: url('/contents/images/front.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+  }
 
-    .content-section {
-        padding: 5rem 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+  .hero-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  }
 
-    #about {
-        background: #f9f9f9;
-    }
+  .hero-container { position: relative; z-index: 2; width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+  .hero-title { color: #fff; }
+  .hero-subtitle { font-size: 1.25rem; max-width: 500px; line-height: 1.6; opacity: 0.9; margin-bottom: 2rem; }
+  
+  .hero-actions { display: flex; gap: 1rem; }
+  .btn-primary { background: #fff; color: #000; padding: 1rem 2rem; text-decoration: none; font-weight: 700; border-radius: 4px; transition: 0.3s; }
+  .btn-secondary { border: 1px solid #fff; color: #fff; padding: 1rem 2rem; text-decoration: none; font-weight: 700; border-radius: 4px; transition: 0.3s; }
+  .btn-primary:hover { background: var(--accent); color: #fff; }
 
-    #initiatives {
-        background: #fff;
-    }
+  /* PARTNERS GRID */
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
+  }
 
-    h2 {
-        font-size: 2.5rem;
-        color: #006400;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
+  .partner-item {
+    background: #fff;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
 
-    .about-container p {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-        text-align: justify;
-    }
+  .partner-item:hover { background: #fafafa; z-index: 1; outline: 1px solid #ccc; }
 
-    .vision-mission {
-        display: flex;
-        gap: 2rem;
-        margin-top: 2rem;
-    }
+  .partner-img-wrapper { height: 60px; width: 100%; margin-bottom: 1rem; }
+  .partner-img-wrapper img {
+    width: 100%; height: 100%; object-fit: contain;
+    filter: grayscale(100%); opacity: 0.6; transition: 0.3s;
+  }
 
-    @media (max-width: 768px) {
-        .vision-mission {
-            flex-direction: column;
-        }
-    }
+  .partner-item:hover img { filter: grayscale(0%); opacity: 1; }
+  .partner-name { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #aaa; letter-spacing: 0.05em; }
 
-    .vision,
-    .mission {
-        flex: 1;
-        padding: 1.5rem;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+  /* ABOUT SECTION SPLIT */
+  .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-lead { font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem; line-height: 1.4; }
+  .about-body { color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; }
+  .text-link { color: var(--accent); font-weight: 700; text-decoration: none; }
 
-    .vision h3,
-    .mission h3 {
-        font-size: 1.8rem;
-        color: #228B22;
-        margin-bottom: 1rem;
-    }
+  .image-frame {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 20px 20px 0px #f0f0f0;
+  }
+  .image-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-    .vision p,
-    .mission p {
-        text-align: justify;
-    }
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-split { grid-template-columns: 1fr; gap: 40px; }
+  }
 
-    .initiative-card {
-        background: #f0f7f0;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .initiative-card p {
-        text-align: justify;
-    }
-
-    /* Partners Section - Updated */
-    .partners-section {
-        padding: 5rem 2rem;
-        background: #fff;
-        text-align: center;
-    }
-
-    .partners-section h2 {
-        font-size: 2.5rem;
-        color: #006400;
-        margin-bottom: 3rem;
-    }
-
-    .partners-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .partner-card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-        border-radius: 12px;
-        padding: 2rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid #f0f0f0;
-        position: relative;
-        overflow: hidden;
-        height: 140px;
-    }
-
-    .partner-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #006400, #228B22);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-
-    .partner-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .partner-card:hover::before {
-        transform: scaleX(1);
-    }
-
-    .partner-logo {
-        width: auto;
-        height: auto;
-        max-width: 140px;
-        max-height: 100px;
-        object-fit: contain;
-        filter: grayscale(20%) contrast(1.1);
-        transition: all 0.3s ease;
-    }
-
-    .partner-card:hover .partner-logo {
-        filter: grayscale(0%) contrast(1.2);
-        transform: scale(1.05);
-    }
-
-    .partner-badge {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: #006400;
-        color: white;
-        font-size: 0.60rem;
-        font-weight: 600;
-        padding: 0.4rem 0.8rem;
-        border-radius: 16px;
-        opacity: 0;
-        transform: translateX(10px);
-        transition: all 0.3s ease;
-        z-index: 10;
-    }
-
-    .partner-card:hover .partner-badge {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .partners-grid {
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .partner-card {
-            padding: 1.5rem;
-            height: 120px;
-        }
-
-        .partner-logo {
-            max-width: 120px;
-            max-height: 80px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .partners-section {
-            padding: 3rem 1rem;
-        }
-
-        .partners-grid {
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-        }
-
-        .partner-card {
-            padding: 1rem;
-            height: 100px;
-        }
-
-        .partner-logo {
-            max-width: 100px;
-            max-height: 70px;
-        }
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+  @media (max-width: 600px) {
+    .hero-header { text-align: left; height: auto; padding: 120px 0; }
+    .hero-actions { flex-direction: column; }
+    .partners-grid { grid-template-columns: 1fr; }
+  }
 </style>

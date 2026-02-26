@@ -3,84 +3,167 @@ layout: base.njk
 title: All projects
 permalink: /projects/
 ---
-<h1 style="text-align: center; padding: 80px; ">{{ title }}</h1>
 
-<div class="project-list">
-  {% for project in collections.projects %}
-  <div class="project">
-    {% if project.data.images and project.data.images[0] %}
-    <img src="{{ project.data.featured[0] }}" alt="{{ project.data.title }} image">
-    {% endif %}
-    <div class="project-content">
-      <h2><a href="{{ project.url }}">{{ project.data.title }}</a></h2>
-      <!-- <p>Date: {{ project.data.date }}</p> -->
-      <p>{{ project.data.description }}</p>
-    </div>
+<div class="archive-container">
+  <div class="archive-intro">
+    <span class="archive-tag">Portfolio</span>
+    <h1 class="archive-title">{{ title }}</h1>
+    <div class="archive-line"></div>
   </div>
-  {% endfor %}
+
+  <div class="project-list">
+    {% for project in collections.projects %}
+    <a href="{{ project.url }}" class="project-card">
+      <div class="card-image-wrapper">
+        {% if project.data.featured %}
+          <img src="{{ project.data.featured }}" alt="{{ project.data.title }}" loading="lazy">
+        {% else %}
+          <div class="image-placeholder"></div>
+        {% endif %}
+      </div>
+      
+      <div class="card-content">
+        <h2 class="card-title">{{ project.data.title }}</h2>
+        <p class="card-description">{{ project.data.description }}</p>
+        <span class="card-link">View Project →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </div>
 
 <style>
+  :root {
+    --border-color: #eaeaea;
+    --text-main: #1a1a1a;
+    --text-muted: #666;
+    --accent: #000;
+    --max-width: 1148px;
+  }
+
+  /* LAYOUT & TITLE POSITIONING */
+  .archive-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px; /* Professional whitespace at the top */
+  }
+
+  .archive-intro {
+    margin-bottom: 60px; /* Better separation from the grid */
+  }
+
+  .archive-tag {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #a0a0a0;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .archive-title {
+    font-size: clamp(2.5rem, 5vw, 3.2rem);
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .archive-line {
+    height: 4px;
+    width: 60px;
+    background: var(--accent);
+  }
+
+  /* PROJECT GRID */
   .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
   }
 
-  .project {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-  }
-
-  .project:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .project-content {
-    padding: 1.5rem;
-  }
-
-  .project h2 {
-    font-size: 1.25rem;
-    margin: 0 0 0.5rem;
-    color: #333;
-  }
-
-  .project h2 a {
-    color: #2b6cb0;
+  /* ORIGINAL CARD STYLING RESTORED */
+  .project-card {
     text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .project h2 a:hover {
-    color: #1a4971;
-    text-decoration: underline;
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: #d1d1d1;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.06);
   }
 
-  .project p {
-    margin: 0 0 0.75rem;
-    color: #555;
-    font-size: 0.9rem;
-  }
-
-  .project img {
+  .card-image-wrapper {
     width: 100%;
-    object-fit: cover;
-    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #f9f9f9;
   }
 
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .project-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-main);
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-link {
+    margin-top: auto;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .project-card:hover .card-link {
+    opacity: 1;
+  }
+
+  /* RESPONSIVE */
   @media (max-width: 768px) {
-    .project-list {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .project h2 {
-      font-size: 1.1rem;
-    }
-
+    .archive-container { padding: 40px 20px; }
+    .archive-intro { margin-bottom: 40px; }
+    .project-list { grid-template-columns: 1fr; }
   }
 </style>

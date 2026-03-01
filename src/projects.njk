@@ -33,49 +33,6 @@ permalink: /projects/
 </div>
 
 <style>
-  :root {
-    --border-color: #eaeaea;
-    --text-main: #1a1a1a;
-    --text-muted: #666;
-    --accent: #000;
-    --max-width: 1148px;
-  }
-
-  /* LAYOUT & TITLE POSITIONING */
-  .archive-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 80px 24px; /* Professional whitespace at the top */
-  }
-
-  .archive-intro {
-    margin-bottom: 60px; /* Better separation from the grid */
-  }
-
-  .archive-tag {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #a0a0a0;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .archive-title {
-    font-size: clamp(2.5rem, 5vw, 3.2rem);
-    font-weight: 800;
-    margin: 0 0 20px 0;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-  }
-
-  .archive-line {
-    height: 4px;
-    width: 60px;
-    background: var(--accent);
-  }
-
   /* PROJECT GRID */
   .project-list {
     display: grid;
@@ -162,8 +119,6 @@ permalink: /projects/
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    .archive-container { padding: 40px 20px; }
-    .archive-intro { margin-bottom: 40px; }
     .project-list { grid-template-columns: 1fr; }
   }
 </style>

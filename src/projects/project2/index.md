@@ -1,7 +1,8 @@
 ---
 layout: project.njk
 title: Bonna 2024
-date: 
+date: 2024-11-01
+tag: initiatives
 description: বিএসসিএফ পরিবার দৃঢ় অঙ্গীকারবদ্ধ ছিলো,আপনাদের পাঠানো সহায়তা বন্যায় ক্ষতিগ্রস্ত মানুষদের কাছে পৌছে দিতে।
 
 featured:

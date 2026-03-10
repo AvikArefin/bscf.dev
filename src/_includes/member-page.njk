@@ -32,6 +32,19 @@ layout: base.njk
             </a>
           </div>
         {% endif %}
+        {% if member.gmail %}
+  <div class="member-social">
+    <a href="mailto:{{ member.gmail }}" class="linkedin-link" aria-label="Send Email">
+      <span class="icon-wrapper">
+        <i class="bi bi-envelope-fill"></i>
+      </span>
+      <div class="social-text">
+        <span class="social-label">Send an</span>
+        <span class="social-platform">Email</span>
+      </div>
+    </a>
+  </div>
+{% endif %}
       </div>
     </div>
 
@@ -139,8 +152,8 @@ layout: base.njk
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-
-
+  
+  
   .bio-content {
     font-size: 1.1rem;
     line-height: 1.8;

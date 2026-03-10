@@ -1,7 +1,8 @@
 ---
 layout: project.njk
 title: স্বচ্ছতা
-date: 
+date: 2024-04-07
+tag: initiatives
 description: Purnota Foundation team and our collaborative field partners are happy to inform you that we have began to work on 5 more tube-wells!
 
 featured:

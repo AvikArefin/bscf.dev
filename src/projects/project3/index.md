@@ -2,6 +2,7 @@
 layout: project.njk
 title: Civic engagement Workshop in association with IRI
 date: 
+tag: events
 description: The IRI and BSCF Workshop on civic engagement was a collaborative effort between the International Republican Institute (IRI) and the Bangladesh Socio-Cultural Forum (BSCF)
 
 featured:

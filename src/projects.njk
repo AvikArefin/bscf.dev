@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: All projects
-permalink: /projects/
+title: All Initiatives
+permalink: /initiatives/
 ---
 
 <div class="archive-container">
@@ -12,11 +12,11 @@ permalink: /projects/
     <div class="filter-wrapper">
       <button class="filter-btn active" data-filter="all">All</button>
       {% set uniqueTags = [] %}
-      {% for project in collections.projects %}
-        {% if project.data.tag and project.data.tag not in uniqueTags %}
-          {% set uniqueTags = (uniqueTags.push(project.data.tag), uniqueTags) %}
-          <button class="filter-btn" data-filter="{{ project.data.tag | slugify }}">
-            {{ project.data.tag }}
+      {% for item in collections.initiatives %}
+        {% if item.data.tag and item.data.tag not in uniqueTags %}
+          {% set uniqueTags = (uniqueTags.push(item.data.tag), uniqueTags) %}
+          <button class="filter-btn" data-filter="{{ item.data.tag | slugify }}">
+            {{ item.data.tag }}
           </button>
         {% endif %}
       {% endfor %}
@@ -25,14 +25,14 @@ permalink: /projects/
     <div class="archive-line"></div>
   </div>
 
-  <div class="project-list" id="project-grid">
-    {% for project in collections.projects | reverse %}
-    <a href="{{ project.url }}" 
-       class="project-card" 
-       data-category="{{ project.data.tag | slugify }}">
+  <div class="item-list" id="item-grid">
+    {% for item in collections.initiatives | reverse %}
+    <a href="{{ item.url }}" 
+       class="item-card" 
+       data-category="{{ item.data.tag | slugify }}">
       <div class="card-image-wrapper">
-        {% if project.data.featured %}
-          <img src="{{ project.data.featured }}" alt="{{ project.data.title }}" loading="lazy">
+        {% if item.data.featured %}
+          <img src="{{ item.data.featured }}" alt="{{ item.data.title }}" loading="lazy">
         {% else %}
           <div class="image-placeholder"></div>
         {% endif %}
@@ -40,12 +40,12 @@ permalink: /projects/
       
       <div class="card-content">
         <div class="card-metadata">
-          <span class="card-tag">{{ project.data.tag }}</span>
-          <span class="card-date">{{ project.date.toDateString() }}</span>
+          <span class="card-tag">{{ item.data.tag }}</span>
+          <span class="card-date">{{ item.date.toDateString() }}</span>
         </div>
-        <h2 class="card-title">{{ project.data.title }}</h2>
-        <p class="card-description">{{ project.data.description }}</p>
-        <span class="card-link">View Project →</span>
+        <h2 class="card-title">{{ item.data.title }}</h2>
+        <p class="card-description">{{ item.data.description }}</p>
+        <span class="card-link">View item →</span>
       </div>
     </a>
     {% endfor %}
@@ -76,15 +76,15 @@ permalink: /projects/
   .filter-btn:hover { border-color: var(--accent); color: var(--text-main); }
   .filter-btn.active { background: var(--accent, #000); border-color: var(--accent, #000); color: #fff; }
 
-  /* PROJECT GRID - UPDATED FOR 3 COLUMNS */
-  .project-list {
+  /* item GRID - UPDATED FOR 3 COLUMNS */
+  .item-list {
     display: grid;
     /* This forces 3 columns exactly */
     grid-template-columns: repeat(3, 1fr); 
     gap: 2rem;
   }
 
-  .project-card {
+  .item-card {
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -96,9 +96,9 @@ permalink: /projects/
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .project-card.hidden { display: none; }
+  .item-card.hidden { display: none; }
 
-  .project-card:hover {
+  .item-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.06);
   }
@@ -121,11 +121,11 @@ permalink: /projects/
 
   /* RESPONSIVE BREAKPOINTS */
   @media (max-width: 1024px) {
-    .project-list { grid-template-columns: repeat(2, 1fr); } /* 2 columns for tablets */
+    .item-list { grid-template-columns: repeat(2, 1fr); } /* 2 columns for tablets */
   }
 
   @media (max-width: 768px) {
-    .project-list { grid-template-columns: 1fr; } /* 1 column for mobile */
+    .item-list { grid-template-columns: 1fr; } /* 1 column for mobile */
   }
 </style>
 
@@ -136,7 +136,7 @@ permalink: /projects/
       button.classList.add('active');
 
       const filterValue = button.getAttribute('data-filter');
-      const posts = document.querySelectorAll('.project-card');
+      const posts = document.querySelectorAll('.item-card');
 
       posts.forEach(post => {
         if (filterValue === 'all' || post.getAttribute('data-category') === filterValue) {

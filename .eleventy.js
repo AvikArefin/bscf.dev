@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
     // Passthrough copy for static assets
     eleventyConfig.addPassthroughCopy("src/css/");
     eleventyConfig.addPassthroughCopy("src/contents/");
-    eleventyConfig.addPassthroughCopy("src/projects/**/*.{jpg,jpeg,png,avif}");
+    eleventyConfig.addPassthroughCopy("src/initiatives/**/*.{jpg,jpeg,png,avif,svg,webp}");
     eleventyConfig.addPassthroughCopy("src/apply/**/*.{jpg,jpeg,png,avif}");
     eleventyConfig.addPassthroughCopy("CNAME");
 
